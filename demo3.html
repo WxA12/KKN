@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kenangan KKN — Bold Poster</title>
+  <meta name="description" content="Kenangan KKN dengan gaya poster tebal, kontras kuat, dan tipografi mencolok." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111217; --text:#f9fafb; --muted:#9aa1aa;
+      --red:#ff3b3b; --yellow:#ffd166; --blue:#4ea8ff; --border:rgba(255,255,255,0.08);
+      --maxw:1200px; --radius:18px; --ff-display:"Bebas Neue", sans-serif; --ff-sans:"Inter",system-ui;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,#090a0f, #0c0d13 60%); color:var(--text); font-family:var(--ff-sans)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px}
+
+    /* Header */
+    header.site-header{display:flex; align-items:center; justify-content:space-between; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:16px}
+    .mark{width:54px; height:54px; border-radius:14px; background:
+      linear-gradient(135deg,var(--red), var(--yellow)), linear-gradient(135deg,var(--blue), transparent);
+      box-shadow:0 10px 28px rgba(0,0,0,.5)}
+    .heading{font-family:var(--ff-display); font-size:34px; letter-spacing:1px}
+    .sub{color:var(--muted); font-size:13px}
+    nav.primary a{color:var(--text); text-decoration:none; font-weight:700; font-family:var(--ff-display); letter-spacing:.5px; font-size:18px; padding:6px 10px; border-radius:10px}
+    nav.primary a:hover{background:rgba(255,255,255,0.06)}
+    nav.primary a.cta{background:linear-gradient(90deg,var(--red),var(--yellow)); color:#121317}
+
+    /* Hero Poster */
+    .poster{display:grid; grid-template-columns:1fr 460px; gap:28px; align-items:center; padding:28px; border:1px solid var(--border); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent)}
+    .poster h1{font-family:var(--ff-display); font-size:68px; line-height:0.95; margin:0}
+    .poster p{color:var(--muted); margin-top:14px; font-size:16px}
+    .tags{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap}
+    .tag{padding:8px 12px; border-radius:999px; border:1px solid var(--border); font-weight:700; font-family:var(--ff-display); font-size:18px; letter-spacing:.4px}
+    .cover{border-radius:18px; overflow:hidden; border:1px solid var(--border)}
+    .cover img{width:100%; height:360px; object-fit:cover; display:block}
+
+    /* Sections */
+    main section{margin-top:30px}
+    h2{font-family:var(--ff-display); font-size:28px; letter-spacing:.6px; margin:0 0 12px}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px}
+    figure.photo{margin:0; background:var(--panel); border-radius:16px; overflow:hidden; border:1px solid var(--border)}
+    figure.photo img{width:100%; height:220px; object-fit:cover; display:block; filter:saturation(1.05) contrast(1.04)}
+    figcaption{padding:12px; font-family:var(--ff-display); font-size:20px; letter-spacing:.4px}
+
+    /* Profiles */
+    .profiles{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px}
+    article.card{display:flex; gap:14px; padding:16px; border-radius:16px; background:var(--panel); border:1px solid var(--border)}
+    .avatar{width:80px; height:80px; border-radius:12px; object-fit:cover}
+    .info h3{margin:0; font-family:var(--ff-display); font-size:22px; letter-spacing:.4px}
+    .info p{margin:6px 0 0; color:var(--muted); font-size:13px}
+
+    /* Footer */
+    footer.site-footer{margin-top:34px; color:var(--muted); font-size:13px; text-align:center; padding:18px 0; border-top:1px solid var(--border)}
+
+    /* Modal */
+    .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(11,12,16,.85); z-index:90}
+    .modal.open{display:grid}
+    .modal-card{width:min(92%,1100px); max-height:90%; border-radius:16px; overflow:hidden; display:grid; grid-template-columns:1fr 360px; background:var(--panel); border:1px solid var(--border)}
+    .modal-img{width:100%; height:100%; object-fit:cover}
+    .modal-side{padding:20px}
+    .modal-side h3{margin:0 0 8px; font-family:var(--ff-display); font-size:26px; letter-spacing:.5px}
+    .modal-meta{color:var(--muted)}
+    .close-btn{margin-top:12px; padding:8px 12px; border-radius:10px; border:1px solid var(--border); background:transparent; color:var(--text); cursor:pointer; font-family:var(--ff-display); letter-spacing:.4px}
+
+    @media(max-width:950px){.poster{grid-template-columns:1fr}.modal-card{grid-template-columns:1fr}.modal-side{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <div class="heading">KENANGAN KKN — LUX</div>
+          <div class="sub">Desa ABC • Juli 2025 • Universitas</div>
+        </div>
+      </div>
+      <nav class="primary" aria-label="Navigasi">
+        <a href="#galeri">Galeri</a>
+        <a href="#profil">Profil</a>
+        <a href="#kontak" class="cta">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="poster" aria-label="Hero poster">
+      <div>
+        <h1>KENANGAN YANG BERBICARA</h1>
+        <p>Setiap momen KKN adalah poster yang hidup: tegas, hangat, dan membekas. Tampilkan cerita yang layak dipamerkan.</p>
+        <div class="tags" role="list">
+          <span class="tag" role="listitem">Juli 2025</span>
+          <span class="tag" role="listitem">Desa ABC</span>
+          <span class="tag" role="listitem">42 Foto</span>
+        </div>
+      </div>
+      <figure class="cover">
+        <img src="FOTOKKN/COVER_BOLD.jpg" alt="Sampul gaya poster KKN">
+      </figure>
+    </section>
+
+    <main id="konten-utama">
+      <section id="galeri" aria-label="Galeri poster">
+        <h2>Poster kenangan</h2>
+        <div class="gallery">
+          <figure class="photo" data-title="Semangat Pagi" data-desc="Senam pagi di alun-alun desa.">
+            <img src="FOTOKKN/PAGI.jpg" alt="Semangat Pagi">
+            <figcaption>Semangat Pagi</figcaption>
+          </figure>
+          <figure class="photo" data-title="Workshop UMKM" data-desc="Pelatihan pemasaran online untuk UMKM lokal.">
+            <img src="FOTOKKN/UMKM.jpg" alt="Workshop UMKM">
+            <figcaption>Workshop UMKM</figcaption>
+          </figure>
+          <figure class="photo" data-title="Festival Desa" data-desc="Pentas seni dan kuliner tradisi.">
+            <img src="FOTOKKN/FESTIVAL.jpg" alt="Festival Desa">
+            <figcaption>Festival Desa</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="profil" aria-label="Profil tim">
+        <h2>Wajah tim</h2>
+        <div class="profiles">
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaA.jpg" alt="Nama A">
+            <div class="info">
+              <h3>Nama A</h3>
+              <p><strong>Koordinator</strong><br><span class="muted">Operasional & Dokumentasi</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaB.jpg" alt="Nama B">
+            <div class="info">
+              <h3>Nama B</h3>
+              <p><strong>Publikasi</strong><br><span class="muted">Media & Komunitas</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaC.jpg" alt="Nama C">
+            <div class="info">
+              <h3>Nama C</h3>
+              <p><strong>Program</strong><br><span class="muted">Edukasi & Sosial</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="kontak" class="site-footer" role="contentinfo">
+      © 2025 Kenangan KKN — Tim LUX • email@example.com
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" onclick="closeModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <img id="modalImg" class="modal-img" src="" alt="">
+      <div class="modal-side">
+        <h3 id="modalTitle">Judul Foto</h3>
+        <div class="modal-meta" id="modalDesc">Deskripsi singkat foto.</div>
+        <button class="close-btn" onclick="closeModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.photo').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const img=el.querySelector('img');
+        const title=el.dataset.title||img.alt||'';
+        const desc=el.dataset.desc||'';
+        const modal=document.getElementById('modal');
+        document.getElementById('modalTitle').textContent=title;
+        document.getElementById('modalDesc').textContent=desc;
+        const modalImg=document.getElementById('modalImg');
+        modalImg.src=img.src; modalImg.alt=title;
+        modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+      });
+    });
+    function closeModal(){
+      const m=document.getElementById('modal');
+      m.classList.remove('open'); m.setAttribute('aria-hidden','true');
+      document.getElementById('modalImg').src='';
+      document.body.style.overflow='';
+    }
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeModal(); });
+  </script>
+</body>
+</html>

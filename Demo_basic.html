@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>KKN Kenangan – Elegant Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Playfair+Display:400,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: 'Montserrat', Arial, sans-serif; background: #fff; margin: 0; color: #262d3d;}
+    header.hero {background: linear-gradient(120deg, #fff 60%, #23325d 100%); padding: 4rem 0; text-align: center; position:relative;}
+    .hero h1 {font-family: 'Playfair Display', serif; font-size:3rem; color:#202943; margin-bottom:1rem;}
+    .hero p {font-size: 1.4rem; color: #666; margin-bottom: 2rem;}
+    .btn-primary {background: #d4af37; color: #fff; border: none; font-weight: bold; border-radius: 2rem; padding: 1rem 2.5rem; font-size: 1.1em; cursor:pointer; transition: background .2s;}
+    .btn-primary:hover {background: #b89b31;}
+    .features {display: flex; justify-content: center; gap:2rem; margin: 4rem 0;}
+    .feature-card {flex: 1; padding:2rem 1.5rem; background: #f7f3ef; border-radius:1.5rem; box-shadow:0 4px 20px rgba(220,185,130,0.08);}
+    .feature-card i {font-size:2rem; color:#d4af37; margin-bottom: 0.7em;}
+    .section-title {font-size:2rem;text-align:center;margin:4rem 0 2rem 0; font-family: 'Playfair Display', serif;}
+    .testimonials {background: #fcfcfa; padding:2.5rem 0;}
+    .testimonial {max-width:360px;margin:0 auto;text-align:center;}
+    .testimonial p {font-style:italic;}
+    .testimonial .author {font-weight:bold; color:#b89b31;}
+    footer {background: #262d3d; color:#fff; text-align:center; padding: 2rem 0;margin-top:3rem;}
+    @media(max-width:900px){
+      .features{flex-direction:column;}
+      .feature-card{margin-bottom:2rem;}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Kisah KKN Kenangan</h1>
+    <p>Bersama dalam misi, tercipta memori tak tergantikan.<br>Didesain elegan, modern, dan penuh makna.</p>
+    <button class="btn-primary">Jelajahi Cerita</button>
+    <!-- Dummy hero image (ganti src sesuai kebutuhan) -->
+    <img src="https://dummyimage.com/640x340/e0e0e0/cccccc&text=Hero+Image+KKN" alt="Hero Gambar KKN" style="width:60%;border-radius:1em;box-shadow:0 4px 24px rgba(80,70,45,.08);margin-top:2rem;">
+  </header>
+  <section class="features">
+    <div class="feature-card">
+      <i class="fas fa-users"></i>
+      <h3>Kolaborasi Abadi</h3>
+      <p>Bangun tim solid dengan interaksi positif dan kekompakan luar biasa.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-heart"></i>
+      <h3>Momen Penuh Kenangan</h3>
+      <p>Ciptakan memori abadi dari setiap perjalanan bersama KKN tercinta.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-map-marked"></i>
+      <h3>Proyek Berjejak</h3>
+      <p>Berikan kontribusi nyata yang dampaknya terasa bagi masyarakat.</p>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Testimoni Alumni KKN</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Pengalaman KKN tak tergantikan! Desain websitenya elegan, sangat representatif." </p>
+        <div class="author">– Nindya Putri</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    © 2025 KKN Kenangan | <i class="fa-brands fa-instagram"></i> @kkn.kenangan | <i class="fa-brands fa-tiktok"></i> #KKNKenangan
+  </footer>
+</body>
+</html>

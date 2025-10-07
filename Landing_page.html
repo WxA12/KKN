@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KKN Memories - Website Kenangan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 { font-size: 1.25rem; color: #0f4c81; margin: 0; }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(to right, #0f4c81, #2563eb);
+      color: white;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+    .btn {
+      background: #f2a541;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      display: inline-block;
+    }
+    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    h2.section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .templates, .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card h3 { margin-top: 0; color: #0f4c81; }
+    .card p { color: #4b5563; }
+    .card .btn { margin-top: 1rem; }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .step {
+      flex: 1 1 250px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    footer a { color: #f2a541; text-decoration: none; margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>KKN Memories</h1>
+  <nav>
+    <a href="#templates">Template</a>
+    <a href="#how">Cara Kerja</a>
+    <a href="#pricing">Harga</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Simpan Kenangan KKN Jadi Website Cantik</h2>
+  <p>Pilih template, unggah foto, dan bagikan link kenangan untuk seluruh angkatan. Cepat, aman, dan rapi.</p>
+  <a href="#order" class="btn">Buat Website Kenangan</a>
+  <a href="#templates" class="btn" style="background:#fff;color:#0f4c81;">Lihat Demo</a>
+</section>
+
+<section id="templates">
+  <h2 class="section-title">Pilih Template Kenangan</h2>
+  <div class="templates">
+    <div class="card">
+      <h3>Album Nostalgia</h3>
+      <p>Grid foto besar, mood nostalgic, cocok untuk dokumentasi harian.</p>
+      <a href="#" class="btn">Lihat Demo</a>
+    </div>
+    <div class="card">
+      <h3>Jurnal Proyek</h3>
+      <p>Timeline kegiatan, deskripsi proyek, peta lokasi.</p>
+      <a href="#" class="btn">Lihat Demo</a>
+    </div>
+    <div class="card">
+      <h3>Portofolio Tim</h3>
+      <p>Profil anggota, galeri proyek, export PDF kenangan.</p>
+      <a href="#" class="btn">Lihat Demo</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2 class="section-title">Cara Kerja</h2>
+  <div class="steps">
+    <div class="step"><h3>1</h3><p>Pilih template favoritmu</p></div>
+    <div class="step"><h3>2</h3><p>Isi form & unggah foto</p></div>
+    <div class="step"><h3>3</h3><p>Bayar & dapatkan link website dalam 24 jam</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2 class="section-title">Paket & Harga</h2>
+  <div class="pricing">
+    <div class="card">
+      <h3>Basic</h3>
+      <p><strong>Rp75.000</strong></p>
+      <ul>
+        <li>50 foto</li>
+        <li>Publik</li>
+        <li>PDF low-res</li>
+      </ul>
+      <a href="#order" class="btn">Pilih Paket</a>
+    </div>
+    <div class="card">
+      <h3>Pro</h3>
+      <p><strong>Rp150.000</strong></p>
+      <ul>
+        <li>100 foto</li>
+        <li>Password protect</li>
+        <li>PDF high-res</li>
+      </ul>
+      <a href="#order" class="btn">Pilih Paket</a>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <p><strong>Rp300.000</strong></p>
+      <ul>
+        <li>100 foto hi-res</li>
+        <li>Custom domain</li>
+        <li>ZIP foto hi-res</li>
+      </ul>
+      <a href="#order" class="btn">Pilih Paket</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 class="section-title">FAQ</h2>
+  <div class="card">
+    <h3>Berapa lama pengerjaan?</h3>
+    <p>Normal 24 jam kerja setelah pembayaran.</p>
+  </div>
+  <div class="card">
+    <h3>Bisa pakai domain sendiri?</h3>
+    <p>Ya, di paket Premium kami bantu konfigurasi.</p>
+  </div>
+  <div class="card">
+    <h3>Siapa yang bisa melihat?</h3>
+    <p>Pilih publik, password protect, atau unlisted link.</p>
+  </div>
+</section>
+
+<section id="order">
+  <h2 class="section-title">Buat Website Kenanganmu</h2>
+  <form style="max-width:600px;margin:auto;background:white;padding:2rem;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    <label>Nama Proyek</label>
+    <input type="text" style="width:100%;padding:0.5rem;margin-bottom:1rem;" required>
+    <label>Nama PIC</label>
+    <input type="text" style="width:100%;padding:0.5rem;margin-bottom:1rem;" required>
+    <label>No WA PIC</label>
+    <input type="tel" style="width:100%;padding:0.5rem;margin-bottom:1rem;" required>
+    <label>Email</label>
+    <input type

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kenangan KKN — Minimal Elegan</title>
+  <meta name="description" content="Kenangan KKN: galeri, cerita, dan profil dalam gaya minimal elegan." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#1b1b1f; --muted:#6a6a73;
+      --border:#e8e8ed; --brand:#1f4f8d; --accent:#d4a373;
+      --maxw:1100px; --radius:16px;
+      --ff-sans:"Inter",system-ui; --ff-serif:"Playfair Display",serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:var(--ff-sans); color:var(--text); background:var(--bg)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:26px}
+
+    /* Header */
+    header.site-header{display:flex; align-items:center; justify-content:space-between; padding:16px 0; border-bottom:1px solid var(--border)}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:44px; height:44px; border-radius:50%; background:conic-gradient(from 120deg, var(--accent), #f5d7b8, #fff); border:1px solid var(--border)}
+    .title{font-family:var(--ff-serif); font-size:22px; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:13px}
+    nav.primary a{color:var(--text); text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600}
+    nav.primary a:hover{background:#f7f7fb}
+    nav.primary a.cta{color:#fff; background:var(--brand)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:26px; align-items:center; padding:26px 0}
+    .hero h1{font-family:var(--ff-serif); font-size:42px; margin:0; line-height:1.08}
+    .hero p{color:var(--muted); margin-top:12px; font-size:16px}
+    .meta{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap}
+    .pill{border:1px solid var(--border); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:600; font-size:13px}
+    .cover{border-radius:16px; overflow:hidden; border:1px solid var(--border); background:#fafafa}
+    .cover img{width:100%; height:340px; object-fit:cover; display:block}
+
+    /* Sections */
+    main section{padding:26px 0; border-top:1px solid var(--border)}
+    h2{font-family:var(--ff-serif); font-size:22px; margin:0 0 14px}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px}
+    figure.photo{margin:0; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#fff}
+    figure.photo img{width:100%; height:200px; object-fit:cover; display:block}
+    figcaption{padding:10px 12px; font-weight:600; color:#333}
+
+    /* Profiles */
+    .profiles{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px}
+    article.card{display:flex; gap:14px; padding:16px; border:1px solid var(--border); border-radius:14px; background:#fff}
+    .avatar{width:72px; height:72px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
+    .info h3{margin:0; font-size:16px}
+    .info p{margin:6px 0 0; color:var(--muted); font-size:13px}
+
+    /* Footer */
+    footer.site-footer{padding:22px 0; border-top:1px solid var(--border); color:var(--muted); font-size:13px; text-align:center}
+
+    /* Modal */
+    .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55); z-index:80}
+    .modal.open{display:grid}
+    .modal-card{width:min(92%,1000px); max-height:88%; border-radius:16px; overflow:hidden; background:#fff; display:grid; grid-template-columns:1fr 340px; border:1px solid var(--border)}
+    .modal-img{width:100%; height:100%; object-fit:cover}
+    .modal-side{padding:18px}
+    .modal-side h3{margin:0 0 8px; font-family:var(--ff-serif)}
+    .modal-meta{color:var(--muted)}
+    .close-btn{margin-top:12px; padding:8px 12px; border-radius:10px; border:1px solid var(--border); background:#f7f7fb; cursor:pointer}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.modal-card{grid-template-columns:1fr}.modal-side{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">Kenangan KKN — Tim LUX</div>
+          <div class="sub">Desa ABC • Juli 2025 • Universitas</div>
+        </div>
+      </div>
+      <nav class="primary" aria-label="Navigasi utama">
+        <a href="#galeri">Galeri</a>
+        <a href="#profil">Profil</a>
+        <a href="#kontak" class="cta">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Bagian pembuka">
+      <div>
+        <h1>Kenangan KKN — Cerah, Bersih, Abadi</h1>
+        <p>Dokumentasi momen terbaik KKN dengan tampilan minimal putih yang elegan. Fokus pada foto, cerita, dan kebersamaan tim.</p>
+        <div class="meta" role="list">
+          <span class="pill" role="listitem">Periode: Juli 2025</span>
+          <span class="pill" role="listitem">Lokasi: Desa ABC</span>
+          <span class="pill" role="listitem">Total Foto: 36</span>
+        </div>
+      </div>
+      <figure class="cover">
+        <img src="FOTOKKN/COVER_MINIMAL.jpg" alt="Sampul Kenangan KKN">
+      </figure>
+    </section>
+
+    <main id="konten-utama">
+      <section id="galeri" aria-label="Galeri foto">
+        <h2>Foto pilihan</h2>
+        <div class="gallery">
+          <figure class="photo" data-title="Pembukaan KKN" data-desc="Seremoni pembukaan di balai desa.">
+            <img src="FOTOKKN/OPENING.jpg" alt="Pembukaan KKN">
+            <figcaption>Pembukaan KKN</figcaption>
+          </figure>
+          <figure class="photo" data-title="Edukasi Anak" data-desc="Kelas literasi di perpustakaan desa.">
+            <img src="FOTOKKN/EDUKASI.jpg" alt="Edukasi Anak">
+            <figcaption>Edukasi Anak</figcaption>
+          </figure>
+          <figure class="photo" data-title="Gotong Royong" data-desc="Bersih-bersih area sungai.">
+            <img src="FOTOKKN/GOTONG.jpg" alt="Gotong Royong">
+            <figcaption>Gotong Royong</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="profil" aria-label="Profil anggota tim">
+        <h2>Anggota tim</h2>
+        <div class="profiles">
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaA.jpg" alt="Nama A">
+            <div class="info">
+              <h3>Nama A</h3>
+              <p><strong>Ketua Tim</strong><br><span class="muted">Koordinasi & Dokumentasi</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaB.jpg" alt="Nama B">
+            <div class="info">
+              <h3>Nama B</h3>
+              <p><strong>Sekretaris</strong><br><span class="muted">Administrasi & Publikasi</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="avatar" src="FOTOKKN/anggotaC.jpg" alt="Nama C">
+            <div class="info">
+              <h3>Nama C</h3>
+              <p><strong>Program</strong><br><span class="muted">Edukasi & Sosial</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="kontak" class="site-footer" role="contentinfo">
+      © 2025 Kenangan KKN — Tim LUX • email@example.com
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" onclick="closeModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <img id="modalImg" class="modal-img" src="" alt="">
+      <div class="modal-side">
+        <h3 id="modalTitle">Judul Foto</h3>
+        <div class="modal-meta" id="modalDesc">Deskripsi singkat foto.</div>
+        <button class="close-btn" onclick="closeModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.photo').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const img = el.querySelector('img');
+        const title = el.dataset.title || img.alt || '';
+        const desc = el.dataset.desc || '';
+        const modal = document.getElementById('modal');
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDesc').textContent = desc;
+        const modalImg = document.getElementById('modalImg');
+        modalImg.src = img.src; modalImg.alt = title;
+        modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+      });
+    });
+    function closeModal(){
+      const m=document.getElementById('modal');
+      m.classList.remove('open'); m.setAttribute('aria-hidden','true');
+      document.getElementById('modalImg').src=''; document.body.style.overflow='';
+    }
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeModal(); });
+  </script>
+</body>
+</html>

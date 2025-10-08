@@ -9,12 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#08060a; --panel: rgba(255,255,255,0.03);
-      --muted:#b9b6bb; --accent:#cda94f; --white:#f7f6f5;
-      --maxw:1200px; --radius:14px;
-      --ff-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      --ff-serif:"Merriweather",serif;
-    }
+  --bg: #08060a;
+  --panel: rgba(255,255,255,0.03);
+  --muted: #b9b6bb;
+  --accent: #cda94f;
+  --white: #f7f6f5;
+  --maxw: 1200px;
+  --radius: 14px;
+  --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --ff-serif: "Merriweather", serif;
+
+  /* Responsive avatar sizing */
+  --avatar-min: 78px;     /* mobile minimum */
+  --avatar-mid: 110px;    /* tablet baseline */
+  --avatar-max: 180px;    /* large desktop maximum */
+  --profile-gap: 18px;
+}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -198,7 +208,7 @@
           <article class="card" aria-label="Profil Intan">
             <img class="avatar" src="Kenangan KKN/3. Sekretaris/INTAN IMUT.png" alt="INTAN" loading="lazy">
             <div class="info">
-              <h3>INTAN</h3>
+              <h3>INTAN IMUT</h3>
               <p><span class="role">Anggota</span><span class="muted">Sekretaris</span></p>
             </div>
           </article>
@@ -281,7 +291,7 @@
 
     <!-- FOOTER -->
     <footer id="kontak" class="site-footer" role="contentinfo">
-      © 2025 Kenangan KKN — TIM LUX. Dibuat dengan cinta. Kontak: email@example.com
+      © 2025 Kenangan KKN — TIM BMG (Berburu Makan Gratis). Kontak: wiraadiputra12.24@gmail.com
     </footer>
   </div>
 

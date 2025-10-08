@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kenangan KKN — Tim Elegan</title>
+  <title>Kenangan KKN — TIM BMG (Berburu Makan Gratis)</title>
   <meta name="description" content="Kenangan KKN: foto, cerita, dan profil peserta." />
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -62,13 +62,15 @@
     figure.photo:hover img{transform:scale(1.06); filter:brightness(1.05) saturate(1.05)}
     figcaption{position:absolute; left:12px; bottom:12px; background:linear-gradient(90deg, rgba(3,3,3,0.6), rgba(3,3,3,0.25)); padding:8px 12px; border-radius:10px; font-weight:700; font-size:13px; color:var(--white)}
 
-    /* Profiles */
-    .profiles{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-top:12px}
-    article.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:12px; padding:16px; display:flex; gap:14px; align-items:center; border:1px solid rgba(255,255,255,0.06); transition:transform .25s}
+    /* Profiles (ENLARGED) */
+    .profiles{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin-top:12px}
+    article.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:12px; padding:18px 20px; display:flex; gap:18px; align-items:center; border:1px solid rgba(255,255,255,0.06); transition:transform .25s}
     article.card:hover{transform:translateY(-6px)}
-    .avatar{width:72px; height:72px; border-radius:10px; object-fit:cover; box-shadow:0 6px 18px rgba(2,2,2,0.6)}
-    .info h3{margin:0; font-size:16px; font-weight:700}
-    .info p{margin:6px 0 0; color:var(--muted); font-size:13px}
+    .avatar{width:110px; height:110px; border-radius:12px; object-fit:cover; box-shadow:0 8px 22px rgba(2,2,2,0.6); flex-shrink:0}
+    .info h3{margin:0; font-size:18px; font-weight:800; letter-spacing:0.6px}
+    .info p{margin:8px 0 0; color:var(--muted); font-size:14px}
+    .role {display:block; font-weight:700; color:var(--white); font-size:13px}
+    .muted{color:var(--muted); font-size:13px}
 
     /* Footer */
     footer.site-footer{margin-top:34px; color:var(--muted); font-size:13px; text-align:center; padding:18px 0; border-top:1px solid rgba(255,255,255,0.06); margin-bottom:40px}
@@ -90,11 +92,16 @@
       .modal-card{grid-template-columns:1fr}
       .modal-side{display:none}
       .hero-left p{max-width:100%}
+      .profiles{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+      .avatar{width:92px; height:92px}
+      .info h3{font-size:16px}
     }
     @media (max-width:600px){
       .gallery{grid-template-columns:1fr}
       .cover{height:260px}
       figure.photo img{height:180px}
+      .profiles{grid-template-columns:1fr}
+      .avatar{width:86px; height:86px}
     }
   </style>
 </head>
@@ -106,8 +113,8 @@
       <div class="brand">
         <div class="logo-mark" aria-hidden="true">K</div>
         <div>
-          <div class="site-title">Kenangan KKN — TIM LUX</div>
-          <div class="site-sub">Desa ABC • Juli 2025 • Universitas</div>
+          <div class="site-title">Kenangan KKN — TIM BMG (Berburu Makan Gratis)</div>
+          <div class="site-sub">Desa Kandangan • Juli - Agustus 2025 • Universitas Negeri Semarang</div>
         </div>
       </div>
       <nav class="primary" aria-label="Navigasi utama">
@@ -120,12 +127,12 @@
     <!-- HERO -->
     <section class="hero" aria-label="Hero kenangan">
       <div class="hero-left">
-        <h1>Kenangan KKN — Desa ABC</h1>
-        <p>Galeri momen paling berkesan selama KKN: kegiatan, edukasi, bakti sosial, dan kebersamaan tim. Tema elegan, cocok untuk dikenang dan dijadikan koleksi digital.</p>
+        <h1>Kenangan KKN — Desa Kandangan</h1>
+        <p>“Ngabdi tanpa batas, tidur tetap keras”</p>
         <div class="meta-list" role="list">
-          <span class="meta-pill" role="listitem">Periode: Juli 2025</span>
-          <span class="meta-pill" role="listitem">Total Foto: 24</span>
-          <span class="meta-pill" role="listitem">Lokasi: Desa ABC</span>
+          <span class="meta-pill" role="listitem">Periode: 2 Juli - 29 agustus 2025</span>
+          <span class="meta-pill" role="listitem">Total Foto: 6</span>
+          <span class="meta-pill" role="listitem">Lokasi: Desa Kandangan</span>
         </div>
       </div>
       <div class="hero-right">
@@ -172,27 +179,102 @@
       <section id="profil" class="section" aria-label="Profil anggota">
         <h2>Profil Anggota Tim</h2>
         <div class="profiles">
-          <article class="card" aria-label="Profil Nama A">
-            <img class="avatar" src="Kenangan KKN/1. Kormades/BILLY.png" alt="Nama A" loading="lazy">
+          <article class="card" aria-label="Profil Billy">
+            <img class="avatar" src="Kenangan KKN/1. Kormades/BILLY.png" alt="BILLY" loading="lazy">
             <div class="info">
               <h3>BILLY</h3>
-              <p><strong>Kormades</strong><br><span class="muted">Koordinator Mahasiswa Desa</span></p>
+              <p><span class="role">Kormades</span><span class="muted">Koordinator Mahasiswa Desa</span></p>
             </div>
           </article>
-          <article class="card" aria-label="Profil Nama B">
-            <img class="avatar" src="Kenangan KKN/2. Wakormades/NENY.png" alt="Nama B" loading="lazy">
+
+          <article class="card" aria-label="Profil Neny">
+            <img class="avatar" src="Kenangan KKN/2. Wakormades/NENY.png" alt="NENY" loading="lazy">
             <div class="info">
               <h3>NENY</h3>
-              <p><strong>Wakormades</strong><br><span class="muted">Wakil Koordinator Mahasiswa Desa</span></p>
+              <p><span class="role">Wakormades</span><span class="muted">Wakil Koordinator Mahasiswa Desa</span></p>
             </div>
           </article>
-          <article class="card" aria-label="Profil Nama C">
-            <img class="avatar" src="Kenangan KKN/3. Sekretaris/INTAN IMUT.png" alt="Nama C" loading="lazy">
+
+          <article class="card" aria-label="Profil Intan">
+            <img class="avatar" src="Kenangan KKN/3. Sekretaris/INTAN IMUT.png" alt="INTAN" loading="lazy">
             <div class="info">
               <h3>INTAN</h3>
-              <p><strong>Anggota</strong><br><span class="muted">Sekretaris</span></p>
+              <p><span class="role">Anggota</span><span class="muted">Sekretaris</span></p>
             </div>
           </article>
+
+          <article class="card" aria-label="Profil Rudi">
+            <img class="avatar" src="Kenangan KKN/4. Sekretaris 2/LULU.png" alt="RUDI" loading="lazy">
+            <div class="info">
+              <h3>LULU</h3>
+              <p><span class="role">Anggota</span><span class="muted">Sekretaris 2</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Sari">
+            <img class="avatar" src="Kenangan KKN/5. Bendahara/ZANABA.png" alt="ZANABA" loading="lazy">
+            <div class="info">
+              <h3>ZANABA</h3>
+              <p><span class="role">Anggota</span><span class="muted">Bendahara</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Agus">
+            <img class="avatar" src="Kenangan KKN/6. Humas/HANI.png" alt="HANI" loading="lazy">
+            <div class="info">
+              <h3>HANI</h3>
+              <p><span class="role">Anggota</span><span class="muted">Humas</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Lina">
+            <img class="avatar" src="Kenangan KKN/7. Humas 2/umam.png" alt="UMAM" loading="lazy">
+            <div class="info">
+              <h3>UMAM</h3>
+              <p><span class="role">Anggota</span><span class="muted">Humas 2</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Wahyu">
+            <img class="avatar" src="Kenangan KKN/8. PDD/RAHMA.png" alt="RAHMA" loading="lazy">
+            <div class="info">
+              <h3>RAHMA</h3>
+              <p><span class="role">Anggota</span><span class="muted">PDD</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Maya">
+            <img class="avatar" src="Kenangan KKN/9. PDD 2/AUL.png" alt="AUL" loading="lazy">
+            <div class="info">
+              <h3>AUL</h3>
+              <p><span class="role">Anggota</span><span class="muted">PDD 2</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Dedi">
+            <img class="avatar" src="Kenangan KKN/10. PDD 3/FARID.png" alt="FARID" loading="lazy">
+            <div class="info">
+              <h3>FARID</h3>
+              <p><span class="role">Anggota</span><span class="muted">PDD 3</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Putri">
+            <img class="avatar" src="Kenangan KKN/11. Logistik/FISKA.png" alt="FISKA" loading="lazy">
+            <div class="info">
+              <h3>FISKA</h3>
+              <p><span class="role">Anggota</span><span class="muted">Logistik</span></p>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Profil Bimo">
+            <img class="avatar" src="Kenangan KKN/12. Logistik 2/NAZAR.png" alt="NAZAR" loading="lazy">
+            <div class="info">
+              <h3>NAZAR</h3>
+              <p><span class="role">Anggota</span><span class="muted">Logistik 2</span></p>
+            </div>
+          </article>
+
         </div>
       </section>
     </main>

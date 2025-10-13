@@ -1,373 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kenangan KKN — TIM BMG (Terang)</title>
-  <meta name="description" content="Kenangan KKN: foto, cerita, dan profil peserta (tema terang)." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KKN TIM BMG</title>
   <style>
-    :root{
-      --bg:#f7f7f9;
-      --card:#ffffff;
-      --muted:#6b6b74;
-      --accent:#cda94f;
-      --accent-2:#8c6a2f;
-      --radius:12px;
-      --avatar-max:220px;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d0d0d; /* background gelap */
+      color: #f1c40f;
+      text-align: center;
     }
-    html,body{height:100%}
-    body{
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,#ffffff 0%, #f1f3f5 100%);
-      color:#111827;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      padding-bottom:60px;
+    .container {
+      background: rgba(0,0,0,0.7);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+      max-width: 400px;
     }
-    .logo-mark{
-      width:56px;height:56px;border-radius:10px;
-      background:linear-gradient(135deg,var(--accent), var(--accent-2));
-      display:grid;place-items:center;font-family:"Merriweather",serif;color:#120703;font-weight:900;
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12;
     }
-    .hero-card{
-      background:var(--card);
-      border-radius:var(--radius);
-      border:1px solid rgba(16,24,40,0.06);
-      box-shadow:0 6px 22px rgba(15,23,42,0.06);
+    .card-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
-    .meta-pill{background:transparent; padding:.35rem .7rem; border-radius:999px; color:var(--muted); border:1px solid rgba(16,24,40,0.06); font-weight:600; font-size:.85rem;}
-    .gallery-figure{border-radius:10px; overflow:hidden; border:1px solid rgba(16,24,40,0.04); background:linear-gradient(180deg,#fff,#fbfbfd); cursor:pointer; position:relative;}
-    .gallery-figure img{width:100%; height:240px; object-fit:cover; transition:transform .45s ease, filter .45s ease}
-    .gallery-figure:hover img{transform:scale(1.04); filter:brightness(.98) saturate(1.02)}
-    .gallery-caption{position:absolute; left:12px; bottom:12px; background:rgba(17,24,39,0.75); color:#fff; padding:.35rem .6rem; border-radius:8px; font-weight:700; font-size:.9rem}
-    .profile-card{background:linear-gradient(180deg,#fff,#fafafb); border-radius:12px; border:1px solid rgba(16,24,40,0.04); padding:1rem; transition:transform .18s ease; align-items:center; gap:1rem;}
-    .profile-card:hover{transform:translateY(-6px)}
-    .profile-avatar{width:clamp(96px,18vw,var(--avatar-max));height:clamp(96px,18vw,var(--avatar-max));border-radius:12px;object-fit:cover;box-shadow:0 8px 20px rgba(15,23,42,0.06)}
-    .profile-name{font-family:"Merriweather",serif;font-weight:800; color:#0f172a; font-size:1.05rem}
-    .profile-role{color:var(--muted); font-weight:600; font-size:.92rem}
-    footer.site-footer{color:var(--muted); font-size:.9rem}
-    .btn-accent{background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:0; color:#120703;}
-    @media (max-width:575px){ .gallery-figure img{height:160px} }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #0d0d0d;
+      background: #f1c40f;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #f39c12;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f1c40f, 0 0 30px #f39c12;
+    }
   </style>
 </head>
 <body>
-  <div class="container py-4">
-    <header class="d-flex align-items-center justify-content-between mb-3">
-      <div class="d-flex align-items-center gap-3">
-        <div class="logo-mark" aria-hidden="true">K</div>
-        <div>
-          <div class="h6 mb-0" style="font-family:'Merriweather',serif">Kenangan KKN — TIM BMG (Berburu Makan Gratis)</div>
-          <div class="small text-muted">Desa Kandangan • Juli - Agustus 2025 • Universitas Negeri Semarang</div>
-        </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-muted" href="#galeri">Galeri</a></li>
-          <li class="nav-item"><a class="nav-link text-muted" href="#profil">Profil</a></li>
-          <li class="nav-item"><a class="btn btn-outline-secondary btn-sm" href="#kontak">Kontak</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero-card p-4 mb-4">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <h1 class="mb-2" style="font-family:'Merriweather',serif; color:#0f172a">Kenangan KKN — Desa Kandangan</h1>
-          <p class="text-muted mb-3">“Ngabdi tanpa batas, tidur tetap keras”</p>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="meta-pill">Periode: 2 Juli - 29 Agustus 2025</span>
-            <span class="meta-pill">Total Foto: 6</span>
-            <span class="meta-pill">Lokasi: Desa Kandangan</span>
-          </div>
-        </div>
-        <div class="col-lg-5 d-flex justify-content-center mt-3 mt-lg-0">
-          <div class="w-100" style="max-width:420px; border-radius:12px; overflow:hidden;">
-            <img src="FOTOKKN/KKN5.jpg" alt="Cover Tim KKN" class="img-fluid rounded" style="height:320px; object-fit:cover;">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <main id="konten-utama">
-      <section id="galeri" class="mb-5">
-        <h2 class="mb-3" style="font-family:'Merriweather',serif; color:#0f172a">Foto Kenangan</h2>
-        <div class="row g-3">
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title=">Day One" data-desc=">Day One">
-              <img src="FOTOKKN/DayOne.jpg" alt="Upacara Penutupan" loading="lazy">
-              <figcaption class="gallery-caption">Day One</figcaption>
-            </figure>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title="Goes To Magelang" data-desc="Goes To Magelang">
-              <img src="FOTOKKN/GoesToMalang.jpg" alt="Bakti Sosial" loading="lazy">
-              <figcaption class="gallery-caption">Goes To Magelang</figcaption>
-            </figure>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title="Kerja Lapangan" data-desc="Tim kerja lapangan melakukan survei.">
-              <img src="FOTOKKN/HALAH.jpg" alt="Kerja Lapangan" loading="lazy">
-              <figcaption class="gallery-caption">Pelepasan Giat 12</figcaption>
-            </figure>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title="Kegiatan Pendidikan" data-desc="Sesi belajar bersama anak-anak desa.">
-              <img src="FOTOKKN/NONTON_BOLA.jpg" alt="Kegiatan Pendidikan" loading="lazy">
-              <figcaption class="gallery-caption">Nonton Bola</figcaption>
-            </figure>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title="Malam Keakraban" data-desc="Acara malam keakraban tim.">
-              <img src="FOTOKKN/KKN4.jpg" alt="Malam Keakraban" loading="lazy">
-              <figcaption class="gallery-caption">Perpisahan</figcaption>
-            </figure>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <figure class="gallery-figure" data-title="Dokumentasi Tim" data-desc="Foto dokumentasi tim bersama warga.">
-              <img src="FOTOKKN/KENANGAN.jpg" alt="Dokumentasi Tim" loading="lazy">
-              <figcaption class="gallery-caption">Liburan di Rowo Gembongan</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section id="profil" class="mb-5">
-        <h2 class="mb-3" style="font-family:'Merriweather',serif; color:#0f172a">Profil Anggota Tim</h2>
-        <div class="row g-3">
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/1. Kormades/BILLY.png" alt="BILLY" class="profile-avatar">
-              <div>
-                <div class="profile-name">BILLY</div>
-                <div class="profile-role">Kormades • Koordinator Mahasiswa Desa</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="BILLY" data-role="Kormades" data-desc="Koordinator Mahasiswa Desa" data-img="Kenangan KKN/1. Kormades/BILLY.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/2. Wakormades/NENY.png" alt="NENY" class="profile-avatar">
-              <div>
-                <div class="profile-name">NENY</div>
-                <div class="profile-role">Wakormades • Wakil Koordinator Mahasiswa Desa</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="NENY" data-role="Wakormades" data-desc="Wakil Koordinator Mahasiswa Desa" data-img="Kenangan KKN/2. Wakormades/NENY.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/3. Sekretaris/INTAN IMUT.png" alt="INTAN IMUT" class="profile-avatar">
-              <div>
-                <div class="profile-name">INTAN IMUT</div>
-                <div class="profile-role">Anggota • Sekretaris</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="INTAN IMUT" data-role="Sekretaris" data-desc="Sekretaris" data-img="Kenangan KKN/3. Sekretaris/INTAN IMUT.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/4. Sekretaris 2/LULU.png" alt="LULU" class="profile-avatar">
-              <div>
-                <div class="profile-name">LULU</div>
-                <div class="profile-role">Anggota • Sekretaris 2</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="LULU" data-role="Sekretaris 2" data-desc="Sekretaris 2" data-img="Kenangan KKN/4. Sekretaris 2/LULU.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/5. Bendahara/ZANABA.png" alt="ZANABA" class="profile-avatar">
-              <div>
-                <div class="profile-name">ZANABA</div>
-                <div class="profile-role">Anggota • Bendahara</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="ZANABA" data-role="Bendahara" data-desc="Bendahara" data-img="Kenangan KKN/5. Bendahara/ZANABA.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/6. Humas/HANI.png" alt="HANI" class="profile-avatar">
-              <div>
-                <div class="profile-name">HANI</div>
-                <div class="profile-role">Anggota • Humas</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="HANI" data-role="Humas" data-desc="Humas" data-img="Kenangan KKN/6. Humas/HANI.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/7. Humas 2/umam.png" alt="UMAM" class="profile-avatar">
-              <div>
-                <div class="profile-name">UMAM</div>
-                <div class="profile-role">Anggota • Humas 2</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="UMAM" data-role="Humas 2" data-desc="Humas 2" data-img="Kenangan KKN/7. Humas 2/umam.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/8. PDD/RAHMA.png" alt="RAHMA" class="profile-avatar">
-              <div>
-                <div class="profile-name">RAHMA</div>
-                <div class="profile-role">Anggota • PDD</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="RAHMA" data-role="PDD" data-desc="PDD" data-img="Kenangan KKN/8. PDD/RAHMA.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/9. PDD 2/AUL.png" alt="AUL" class="profile-avatar">
-              <div>
-                <div class="profile-name">AUL</div>
-                <div class="profile-role">Anggota • PDD 2</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="AUL" data-role="PDD 2" data-desc="PDD 2" data-img="Kenangan KKN/9. PDD 2/AUL.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/10. PDD 3/FARID.png" alt="FARID" class="profile-avatar">
-              <div>
-                <div class="profile-name">FARID</div>
-                <div class="profile-role">Anggota • PDD 3</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="FARID" data-role="PDD 3" data-desc="PDD 3" data-img="Kenangan KKN/10. PDD 3/FARID.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/11. Logistik/FISKA.png" alt="FISKA" class="profile-avatar">
-              <div>
-                <div class="profile-name">FISKA</div>
-                <div class="profile-role">Anggota • Logistik</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="FISKA" data-role="Logistik" data-desc="Logistik" data-img="Kenangan KKN/11. Logistik/FISKA.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="d-flex profile-card">
-              <img src="Kenangan KKN/12. Logistik 2/NAZAR.png" alt="NAZAR" class="profile-avatar">
-              <div>
-                <div class="profile-name">NAZAR</div>
-                <div class="profile-role">Anggota • Logistik 2</div>
-                <div class="mt-2">
-                  <button class="btn btn-sm btn-outline-secondary view-profile" data-bs-toggle="modal" data-bs-target="#profileModal" data-name="NAZAR" data-role="Logistik 2" data-desc="Logistik 2" data-img="Kenangan KKN/12. Logistik 2/NAZAR.png">Lihat Profil</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </main>
-
-    <footer id="kontak" class="site-footer text-center mt-4">
-      © 2025 Kenangan KKN — TIM BMG (Berburu Makan Gratis).
-    </footer>
+  <div class="container">
+    <h1>Selamat Datang di KKN TIM BMG</h1>
+    <!-- Foto di bawah judul -->
+    <img src="FOTOKKN/KKN5.jpg" alt="Foto KKN" class="card-img">
+    
+    <a href="https://kkn-tim-bmg.netlify.app" class="btn">Kunjungi Website</a>
   </div>
-
-  <!-- Image Modal (lightbox) -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-md-down modal-xl modal-dialog-centered">
-      <div class="modal-content border-0 bg-transparent">
-        <div class="modal-body p-0">
-          <div class="ratio ratio-16x9 rounded">
-            <img id="lightboxImg" src="" alt="" class="img-fluid rounded" style="object-fit:cover;">
-          </div>
-          <div class="mt-2 text-dark">
-            <h5 id="lightboxTitle" class="mb-1"></h5>
-            <p id="lightboxDesc" class="text-muted mb-0"></p>
-          </div>
-        </div>
-        <button type="button" class="btn btn-secondary position-absolute top-2 end-2 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close">Tutup</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Profile Modal -->
-  <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content" style="background:linear-gradient(180deg,#fff,#fbfbfd); border:1px solid rgba(16,24,40,0.04); color:#0f172a">
-        <div class="modal-body">
-          <div class="row g-3">
-            <div class="col-md-5">
-              <img id="profileImg" src="" alt="" class="img-fluid rounded" style="width:100%; height:100%; object-fit:cover; max-height:420px">
-            </div>
-            <div class="col-md-7">
-              <h3 id="profileName" style="font-family:'Merriweather',serif"></h3>
-              <p id="profileRole" class="text-muted"></p>
-              <p id="profileDesc" class="small text-muted"></p>
-              <div class="mt-3">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.querySelectorAll('.gallery-figure').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        const img = el.querySelector('img');
-        const title = el.dataset.title || img.alt || '';
-        const desc = el.dataset.desc || '';
-        const lightboxImg = document.getElementById('lightboxImg');
-        document.getElementById('lightboxTitle').textContent = title;
-        document.getElementById('lightboxDesc').textContent = desc;
-        lightboxImg.src = img.src;
-        lightboxImg.alt = title;
-        new bootstrap.Modal(document.getElementById('imageModal')).show();
-      });
-    });
-
-    document.querySelectorAll('.view-profile').forEach(btn=>{
-      btn.addEventListener('click', (e)=>{
-        const t = e.currentTarget;
-        document.getElementById('profileName').textContent = t.dataset.name || '';
-        document.getElementById('profileRole').textContent = t.dataset.role || '';
-        document.getElementById('profileDesc').textContent = t.dataset.desc || '';
-        document.getElementById('profileImg').src = t.dataset.img || '';
-        document.getElementById('profileImg').alt = t.dataset.name || '';
-      });
-    });
-  </script>
 </body>
 </html>
